@@ -79,4 +79,11 @@
 		class="cm.belrose.camerstock.services.impl.VenteServiceImpl">
 		<property name="dao" ref="venteDao"></property>
 	</bean>
+	
+	<bean id="flickrDao"
+		class="cm.belrose.camerstock.dao.impl.FlickrDaoImpl" />
+	<bean id="flickrService"
+		class="cm.belrose.camerstock.services.impl.FlickrServiceImpl">
+		<property name="dao" ref="flickrDao"></property>
+	</bean>
 </beans>
