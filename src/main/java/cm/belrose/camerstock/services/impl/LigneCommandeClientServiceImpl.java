@@ -18,48 +18,48 @@ public class LigneCommandeClientServiceImpl implements ILigneCommandeClientServi
 		this.dao = LigneCommandeClientDao;
 	}
 
-	@Override
+	//@Override
 	public LigneCommandeClient save(LigneCommandeClient entity) {
 		return dao.save(entity);
 	}
 
-	@Override
+	//@Override
 	public LigneCommandeClient update(LigneCommandeClient entity) {
 		return dao.update(entity);
 	}
 
-	@Override
+	//@Override
 	public LigneCommandeClient findByd(Long id) {
 		return dao.findByd(id);
 	}
 
-	@Override
+	//@Override
 	public void remove(Long id) {
 		dao.remove(id);
 		
 	}
 
-	@Override
+	//@Override
 	public List<LigneCommandeClient> findByAll() {
 		return dao.findByAll();
 	}
 
-	@Override
+	//@Override
 	public List<LigneCommandeClient> findByAll(String sortField, String sort) {
 		return dao.findByAll(sortField, sort);
 	}
 
-	@Override
+	//@Override
 	public LigneCommandeClient findOne(String paramName, Object paramValue) {
 		return dao.findOne(paramName, paramValue);
 	}
 
-	@Override
+	//@Override
 	public LigneCommandeClient findOne(String[] paramNames, Object[] paramValues) {
 		return dao.findOne(paramNames, paramValues);
 	}
 
-	@Override
+	//@Override
 	public int findCountBy(String paramName, String paramValue) {
 		return dao.findCountBy(paramName, paramValue);
 	}

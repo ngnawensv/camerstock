@@ -30,51 +30,51 @@ public class GenericDaoImpl<E> implements IGenericDao<E> {
 		return type;
 	}
 
-	@Override
+	//@Override
 	public E save(E entity) {
 		em.persist(entity);
 		return entity;
 
 	}
 
-	@Override
+	//@Override
 	public E update(E entity) {
 		em.merge(entity);
 		return entity;
 	}
 
-	@Override
+	//@Override
 	public E findByd(Long id) {
 		return em.find(type, id);
 	}
 
-	@Override
+	//@Override
 	public void remove(Long id) {
 		E tab = em.getReference(type, id);
 		em.remove(tab);
 
 	}
 
-	@Override
+	//@Override
 	public List<E> findByAll() {
 		Query query = em.createQuery("select t from " + type.getSimpleName() + " t");
 		return query.getResultList();
 	}
 
-	@Override
+	//@Override
 	public List<E> findByAll(String sortField, String sort) {
 		Query query = em.createQuery("select t from " + type.getSimpleName() + " t order by " + sortField + " " + sort);
 		return query.getResultList();
 	}
 
-	@Override
+	//@Override
 	public E findOne(String paramName, Object paramValue) {
 		Query query = em.createQuery("select t from " + type.getSimpleName() + " t where" + paramName + " =:x");
 		query.setParameter(paramName, paramValue);
 		return query.getResultList().size() > 0 ? (E) query.getResultList().get(0) : null;
 	}
 
-	@Override
+	//@Override
 	public E findOne(String[] paramNames, Object[] paramValues) {
 		if(paramNames.length!=paramValues.length) {
 			return null;
@@ -93,7 +93,7 @@ public class GenericDaoImpl<E> implements IGenericDao<E> {
 		return query.getResultList().size()>0?(E)query.getResultList().get(0):null;
 	}
 
-	@Override
+	//@Override
 	public int findCountBy(String paramName, String paramValue) {
 		Query query = em.createQuery("select t from " + type.getSimpleName() + " t where " + paramName + " =:x");
 		query.setParameter(paramName, paramValue);

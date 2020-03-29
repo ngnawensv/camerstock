@@ -18,48 +18,48 @@ public class LigneVenteServiceImpl implements ILigneVenteService {
 		this.dao = LigneVenteDao;
 	}
 
-	@Override
+	//@Override
 	public LigneVente save(LigneVente entity) {
 		return dao.save(entity);
 	}
 
-	@Override
+	//@Override
 	public LigneVente update(LigneVente entity) {
 		return dao.update(entity);
 	}
 
-	@Override
+	//@Override
 	public LigneVente findByd(Long id) {
 		return dao.findByd(id);
 	}
 
-	@Override
+	//@Override
 	public void remove(Long id) {
 		dao.remove(id);
 		
 	}
 
-	@Override
+	//@Override
 	public List<LigneVente> findByAll() {
 		return dao.findByAll();
 	}
 
-	@Override
+	//@Override
 	public List<LigneVente> findByAll(String sortField, String sort) {
 		return dao.findByAll(sortField, sort);
 	}
 
-	@Override
+	//@Override
 	public LigneVente findOne(String paramName, Object paramValue) {
 		return dao.findOne(paramName, paramValue);
 	}
 
-	@Override
+	//@Override
 	public LigneVente findOne(String[] paramNames, Object[] paramValues) {
 		return dao.findOne(paramNames, paramValues);
 	}
 
-	@Override
+	//@Override
 	public int findCountBy(String paramName, String paramValue) {
 		return dao.findCountBy(paramName, paramValue);
 	}

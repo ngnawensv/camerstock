@@ -17,7 +17,7 @@ public class FlickrServiceImpl implements IFlickrService {
 
 
 
-	@Override
+	//@Override
 	public String savePhoto(InputStream stream, String fileName) throws Exception {
 		return dao.savePhoto(stream, fileName);
 	}

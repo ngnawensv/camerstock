@@ -18,48 +18,48 @@ public class LigneCommandeFournisseurServiceImpl implements ILigneCommandeFourni
 		this.dao = LigneCommandeFournisseurDao;
 	}
 
-	@Override
+	//@Override
 	public LigneCommandeFournisseur save(LigneCommandeFournisseur entity) {
 		return dao.save(entity);
 	}
 
-	@Override
+	//@Override
 	public LigneCommandeFournisseur update(LigneCommandeFournisseur entity) {
 		return dao.update(entity);
 	}
 
-	@Override
+	//@Override
 	public LigneCommandeFournisseur findByd(Long id) {
 		return dao.findByd(id);
 	}
 
-	@Override
+	//@Override
 	public void remove(Long id) {
 		dao.remove(id);
 		
 	}
 
-	@Override
+	//@Override
 	public List<LigneCommandeFournisseur> findByAll() {
 		return dao.findByAll();
 	}
 
-	@Override
+	//@Override
 	public List<LigneCommandeFournisseur> findByAll(String sortField, String sort) {
 		return dao.findByAll(sortField, sort);
 	}
 
-	@Override
+	//@Override
 	public LigneCommandeFournisseur findOne(String paramName, Object paramValue) {
 		return dao.findOne(paramName, paramValue);
 	}
 
-	@Override
+	//@Override
 	public LigneCommandeFournisseur findOne(String[] paramNames, Object[] paramValues) {
 		return dao.findOne(paramNames, paramValues);
 	}
 
-	@Override
+	//@Override
 	public int findCountBy(String paramName, String paramValue) {
 		return dao.findCountBy(paramName, paramValue);
 	}

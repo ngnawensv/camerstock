@@ -18,48 +18,48 @@ public class VenteServiceImpl implements IVenteService {
 		this.dao = VenteDao;
 	}
 
-	@Override
+	//@Override
 	public Vente save(Vente entity) {
 		return dao.save(entity);
 	}
 
-	@Override
+	//@Override
 	public Vente update(Vente entity) {
 		return dao.update(entity);
 	}
 
-	@Override
+	//@Override
 	public Vente findByd(Long id) {
 		return dao.findByd(id);
 	}
 
-	@Override
+	//@Override
 	public void remove(Long id) {
 		dao.remove(id);
 		
 	}
 
-	@Override
+	//@Override
 	public List<Vente> findByAll() {
 		return dao.findByAll();
 	}
 
-	@Override
+	//@Override
 	public List<Vente> findByAll(String sortField, String sort) {
 		return dao.findByAll(sortField, sort);
 	}
 
-	@Override
+	//@Override
 	public Vente findOne(String paramName, Object paramValue) {
 		return dao.findOne(paramName, paramValue);
 	}
 
-	@Override
+	//@Override
 	public Vente findOne(String[] paramNames, Object[] paramValues) {
 		return dao.findOne(paramNames, paramValues);
 	}
 
-	@Override
+	//@Override
 	public int findCountBy(String paramName, String paramValue) {
 		return dao.findCountBy(paramName, paramValue);
 	}

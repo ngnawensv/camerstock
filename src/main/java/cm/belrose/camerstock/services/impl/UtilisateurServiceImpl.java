@@ -18,48 +18,48 @@ public class UtilisateurServiceImpl implements IUtilisateurService {
 		this.dao = UtilisateurDao;
 	}
 
-	@Override
+	//@Override
 	public Utilisateur save(Utilisateur entity) {
 		return dao.save(entity);
 	}
 
-	@Override
+	//@Override
 	public Utilisateur update(Utilisateur entity) {
 		return dao.update(entity);
 	}
 
-	@Override
+	//@Override
 	public Utilisateur findByd(Long id) {
 		return dao.findByd(id);
 	}
 
-	@Override
+	//@Override
 	public void remove(Long id) {
 		dao.remove(id);
 		
 	}
 
-	@Override
+	//@Override
 	public List<Utilisateur> findByAll() {
 		return dao.findByAll();
 	}
 
-	@Override
+	//@Override
 	public List<Utilisateur> findByAll(String sortField, String sort) {
 		return dao.findByAll(sortField, sort);
 	}
 
-	@Override
+	//@Override
 	public Utilisateur findOne(String paramName, Object paramValue) {
 		return dao.findOne(paramName, paramValue);
 	}
 
-	@Override
+	//@Override
 	public Utilisateur findOne(String[] paramNames, Object[] paramValues) {
 		return dao.findOne(paramNames, paramValues);
 	}
 
-	@Override
+	//@Override
 	public int findCountBy(String paramName, String paramValue) {
 		return dao.findCountBy(paramName, paramValue);
 	}

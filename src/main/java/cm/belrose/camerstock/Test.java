@@ -1,10 +1,10 @@
 package cm.belrose.camerstock;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-
-import cm.belrose.camerstock.dao.impl.FlickrDaoImpl;
+//import java.io.File;
+//import java.io.FileInputStream;
+//import java.io.InputStream;
+//
+//import cm.belrose.camerstock.dao.impl.FlickrDaoImpl;
 
 public class Test {
 
