@@ -105,6 +105,15 @@ public class Client implements Serializable {
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "Client [idClient=" + idClient + ", nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse
+				+ ", photo=" + photo + ", mail=" + mail + "]";
+	}
+	
 	
 	
 	
