@@ -29,15 +29,15 @@ public class ClientController {
 
 	@RequestMapping(value = "/")
 	public String client(Model model) {
-		List<Client> clients = clientService.findByAll();
+		List<Client> clients = clientService.findByAll(); //fait a la couche metier	en appelant la méthode findAll()	
 		for (Client client : clients) {
 			System.out.println(client);
 		}
 		if (clients == null) {
 			clients = new ArrayList<Client>();
 		}
-		model.addAttribute("clients", clients);
-		return "client/client";
+		model.addAttribute("clients", clients);//stockage des clients  dans le model avec pour nom "clients"
+		return "client/client"; //renvoi de la vue
 	}
 
 	// fait appel au formulaire d'ajout d'un client
