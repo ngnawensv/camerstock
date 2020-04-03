@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean id="articleDao"
+		class="cm.belrose.camerstock.dao.impl.ArticleDaoImpl"></bean>
+	<bean id="articleService"
+		class="cm.belrose.camerstock.services.impl.ArticleServiceImpl">
+		<property name="dao" ref="articleDao"></property>
+	</bean>
+
+	<bean id="categorieDao"
+		class="cm.belrose.camerstock.dao.impl.CategorieDaoImpl" />
+	<bean id="categorieService"
+		class="cm.belrose.camerstock.services.impl.CategorieServiceImpl">
+		<property name="dao" ref="categorieDao"></property>
+	</bean>
+
+	<bean id="clientDao"
+		class="cm.belrose.camerstock.dao.impl.ClientDaoImpl" />
+	<bean id="clientService"
+		class="cm.belrose.camerstock.services.impl.ClientServiceImpl">
+		<property name="dao" ref="clientDao"></property>
+	</bean>
+
+	<bean id="commandeClientDao"
+		class="cm.belrose.camerstock.dao.impl.CommandeClientDaoImpl" />
+	<bean id="commandeClientService"
+		class="cm.belrose.camerstock.services.impl.CommandeClientServiceImpl">
+		<property name="dao" ref="commandeClientDao"></property>
+	</bean>
+	
+	<bean id="fournisseurDao"
+		class="cm.belrose.camerstock.dao.impl.FournisseurDaoImpl" />
+	<bean id="fournisseurService"
+		class="cm.belrose.camerstock.services.impl.FournisseurServiceImpl">
+		<property name="dao" ref="fournisseurDao"></property>
+	</bean>
+
+	<bean id="commandeFournisseurDao"
+		class="cm.belrose.camerstock.dao.impl.CommandeFournisseurDaoImpl" />
+	<bean id="commandeFournisseurService"
+		class="cm.belrose.camerstock.services.impl.CommandeFournisseurServiceImpl">
+		<property name="dao" ref="commandeFournisseurDao"></property>
+	</bean>
+
+	<bean id="ligneCommandeClientDao"
+		class="cm.belrose.camerstock.dao.impl.LigneCommandeClientDaoImpl" />
+	<bean id="ligneCommandeClientService"
+		class="cm.belrose.camerstock.services.impl.LigneCommandeClientServiceImpl">
+		<property name="dao" ref="ligneCommandeClientDao"></property>
+	</bean>
+
+	<bean id="ligneCommandeFournisseurDao"
+		class="cm.belrose.camerstock.dao.impl.LigneCommandeFournisseurDaoImpl" />
+	<bean id="ligneCommandeFournisseurService"
+		class="cm.belrose.camerstock.services.impl.LigneCommandeFournisseurServiceImpl">
+		<property name="dao" ref="ligneCommandeFournisseurDao"></property>
+	</bean>
+
+	<bean id="ligneVenteDao"
+		class="cm.belrose.camerstock.dao.impl.LigneVenteDaoImpl" />
+	<bean id="ligneVenteService"
+		class="cm.belrose.camerstock.services.impl.LigneVenteServiceImpl">
+		<property name="dao" ref="ligneVenteDao"></property>
+	</bean>
+
+	<bean id="mouvementStockDao"
+		class="cm.belrose.camerstock.dao.impl.MouvementStockDaoImpl" />
+	<bean id="mouvementStockService"
+		class="cm.belrose.camerstock.services.impl.MouvementStockServiceImpl">
+		<property name="dao" ref="mouvementStockDao"></property>
+	</bean>
+
+	<bean id="utilisateurDao"
+		class="cm.belrose.camerstock.dao.impl.UtilisateurDaoImpl" />
+	<bean id="utilisateurService"
+		class="cm.belrose.camerstock.services.impl.UtilisateurServiceImpl">
+		<property name="dao" ref="utilisateurDao"></property>
+	</bean>
+
+	<bean id="venteDao"
+		class="cm.belrose.camerstock.dao.impl.VenteDaoImpl" />
+	<bean id="venteService"
+		class="cm.belrose.camerstock.services.impl.VenteServiceImpl">
+		<property name="dao" ref="venteDao"></property>
+	</bean>
+	
+	<bean id="flickrDao"
+		class="cm.belrose.camerstock.dao.impl.FlickrDaoImpl" />
+	<bean id="flickrService"
+		class="cm.belrose.camerstock.services.impl.FlickrServiceImpl">
+		<property name="dao" ref="flickrDao"></property>
+	</bean>
+</beans>
