@@ -1,11 +1,13 @@
 package cm.belrose.camerstock.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity 
@@ -32,11 +34,13 @@ public class Utilisateur implements Serializable {
 	
 	private String photo;
 	
+	private boolean actived;
+	
+	@OneToMany(mappedBy = "utilisateur")
+	private List<Roles> roles;
+	
 
-	public Utilisateur() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	public Utilisateur() {}
 
 	public Long getIdUtilisateur() {
 		return idUtilisateur;
@@ -84,6 +88,22 @@ public class Utilisateur implements Serializable {
 
 	public void setPhoto(String photo) {
 		this.photo = photo;
+	}
+
+	public List<Roles> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Roles> roles) {
+		this.roles = roles;
+	}
+
+	public boolean isActived() {
+		return actived;
+	}
+
+	public void setActived(boolean actived) {
+		this.actived = actived;
 	}
 	
 	
