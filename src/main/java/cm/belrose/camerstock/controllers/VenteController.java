@@ -1,7 +1,6 @@
 package cm.belrose.camerstock.controllers;
 
-import java.io.IOException;
-import java.io.InputStream;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +14,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import cm.belrose.camerstock.entities.Vente;
 import cm.belrose.camerstock.services.IVenteService;
-import cm.belrose.camerstock.services.IFlickrService;
 
 @Controller
 @RequestMapping(value = "/vente")
@@ -23,9 +21,6 @@ public class VenteController {
 
 	@Autowired
 	private IVenteService venteService;
-
-	@Autowired
-	private IFlickrService flickrService;
 
 	@RequestMapping(value = "/")
 	public String vente(Model model) {
@@ -50,25 +45,7 @@ public class VenteController {
 
 	@RequestMapping(value = "/enregistrer", method = RequestMethod.POST)
 	public String enregisterVente(Model model, Vente vente, MultipartFile file) {
-		String photoUrl = null;
 		if (vente != null) {
-			if ((file != null) && (!file.isEmpty())) {
-				InputStream stream = null;
-				try {
-					stream = file.getInputStream();
-//					photoUrl = flickrService.savePhoto(stream, vente.getNom());
-//					vente.setPhoto(photoUrl);
-				} catch (Exception e) {
-					e.printStackTrace();
-				} finally {
-					try {
-						stream.close();
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-
-				}
-			}
 			if(vente.getIdVente()!=null) {
 				venteService.update(vente);
 			}else {
