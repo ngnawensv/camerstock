@@ -23,4 +23,6 @@ public LigneCommandeClient save (LigneCommandeClient entity);
 	
 	public int findCountBy(String paramName, String paramValue);
 
+	public List<LigneCommandeClient> findByIdCommande(Long idCommandeClient);
+
 }

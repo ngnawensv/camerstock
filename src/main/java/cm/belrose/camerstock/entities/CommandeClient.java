@@ -1,6 +1,7 @@
 package cm.belrose.camerstock.entities;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -14,6 +15,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity 
 @Table(name="commande_client")
@@ -38,6 +42,18 @@ public class CommandeClient implements Serializable {
 	@JoinColumn(name = "idClient")
 	private Client client;
 	
+	/*
+	 * @Transient: annotation pour dire a hibernate de ne pas persiste cet attribut dans la base de donnée
+	 */
+	@Transient
+	private BigDecimal totalCommande;
+	
+	
+	/*
+	 * Annotation @JsonIgnore permmet a hibernate d'ignorer cet attribut lors de la recupération des données
+	 * car cet attribut pourait creer le lazyloardException
+	 */
+	@JsonIgnore
 	@OneToMany(mappedBy = "commandeClient")
 	private List<LigneCommandeClient> ligneCommandeClients;
 	
@@ -86,6 +102,16 @@ public class CommandeClient implements Serializable {
 
 	public void setLigneCommandeClients(List<LigneCommandeClient> ligneCommandeClients) {
 		this.ligneCommandeClients = ligneCommandeClients;
+	}
+
+	public BigDecimal getTotalCommande() {
+		if(!ligneCommandeClients.isEmpty()) {
+			for (LigneCommandeClient ligneCommandeClient : ligneCommandeClients) {
+				BigDecimal totalLigne=ligneCommandeClient.getQuantite().multiply(ligneCommandeClient.getPrixUnitaire());
+				totalCommande=totalCommande.add(totalLigne);
+			}
+		}
+		return totalCommande;
 	}
 	
 	

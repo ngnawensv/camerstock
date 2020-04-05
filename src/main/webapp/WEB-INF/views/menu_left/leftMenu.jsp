@@ -19,8 +19,8 @@
 				<ul class="nav nav-second-level">
 					<c:url value="/client/" var="client"/>
 					<li><a href="${client }"><spring:message code="common.client" /></a></li>
-					<c:url value="/commandeClient/" var="commandeClient"/>
-					<li><a href="${commandeClient }"><spring:message code="common.client.commande" /></a></li>
+					<c:url value="/commandeclient/" var="commandeclient"/>
+					<li><a href="${commandeclient }"><spring:message code="common.client.commande" /></a></li>
 				</ul> <!-- /.nav-second-level --></li>
 			<li><a href="#"><i class="fa fa-group"></i>&nbsp;
 					<spring:message code="common.fournisseur" /><span class="fa arrow"></span></a>
