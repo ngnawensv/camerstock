@@ -76,7 +76,7 @@
 								</div>
 								<div class="form-group">
 									<label><spring:message code="common.prixUnitaireTTC"></spring:message></label> 
-									<f:input id="prixUnitaireTTC" path="prixUnitaireTTC" class="form-control" placeholder="Prix unitaire toute taxe comprise" disabled="true"/>
+									<f:input id="prixUnitaireTTC" path="prixUnitaireTTC" class="form-control" placeholder="Prix unitaire toute taxe comprise"/>
 								</div>
 								<div class="form-group">
 									<label><spring:message code="common.categorie"></spring:message></label> 

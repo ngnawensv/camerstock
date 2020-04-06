@@ -1,6 +1,7 @@
 package cm.belrose.camerstock.controllers;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,11 +10,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import cm.belrose.camerstock.entities.Article;
 import cm.belrose.camerstock.entities.Client;
 import cm.belrose.camerstock.entities.CommandeClient;
 import cm.belrose.camerstock.entities.LigneCommandeClient;
+import cm.belrose.camerstock.model.ModelCommandeClient;
 import cm.belrose.camerstock.services.IArticleService;
 import cm.belrose.camerstock.services.IClientService;
 import cm.belrose.camerstock.services.ICommandeClientService;
@@ -35,6 +39,9 @@ public class CommandeClientController {
 	@Autowired
 	private IArticleService articleService;
 
+	@Autowired
+	private ModelCommandeClient modelCommande;
+	
 	@RequestMapping(value = "/")
 	public String index(Model model) {
 
@@ -60,9 +67,24 @@ public class CommandeClientController {
 			clients=new ArrayList<Client>();
 		}
 		model.addAttribute("clients", clients);
+		model.addAttribute("codeCommande", modelCommande.generateCodeCommande());
+		model.addAttribute("dateCommande", new Date());
 		return "commandeclient/nouvellecommande";
 	}
-//
+	
+	@RequestMapping(value="/detailArticle")
+	@ResponseBody
+	public Article getArticleByCode(final Long codeArticle) {
+		if(codeArticle==null) {
+			return null;
+		}
+		Article article=articleService.findOne("codeArticle",""+codeArticle);
+		if(article==null) {
+			return null;
+		}
+		return article;
+	}
+
 //	@RequestMapping(value = "/enregistrer", method = RequestMethod.POST)
 //	public String enregisterCommandeClient(Model model, CommandeClient commandeClient, MultipartFile file) {
 //		if (commandeClient != null) {

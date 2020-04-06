@@ -49,20 +49,21 @@
 				<div class="col-lg-12">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
-							<spring:message code="common.commadeclient.details"></spring:message>
+							<spring:message code="common.commande.client.title.nouveau"></spring:message>
 						</div>
 						<!-- /.panel-heading -->
 						<div class="panel-body">
 							<form  action="" enctype="multipart/form-data" role="form">
-								<div class="form-group">
+							<div class="form-row">
+							<div class="col-md-4 mb-3">
 									<label><spring:message code="common.codeArticle"></spring:message></label> 
-									<input class="form-control" placeholder="Code"/>
+									<input class="form-control" placeholder="Code" value="${codeCommande}" disabled="true"/>
 								</div>
-								<div class="form-group">
+								<div class="col-md-4 mb-3">
 									<label><spring:message code="common.date"></spring:message></label> 
-									<input class="form-control" placeholder="Date"/>
+									<input class="form-control" placeholder="Date"  value="${dateCommande }" disabled="true"/>
 								</div>
-								<div class="form-group">
+								<div class="col-md-4 mb-3">
 									<label><spring:message code="common.client"></spring:message></label> 
 									<select class="form-control" id="listeClients">
 										<c:forEach items="${clients }" var="client">
@@ -70,6 +71,8 @@
 										</c:forEach>
 									</select>
 								</div>
+							</div>
+								<br/><br/><br/><br/>
 								<div class="panel-footer">
 								<button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;<spring:message code="common.enregistrer"></spring:message></i></button>
 								<a href="<c:url value="/commandeclient/"/>" class="btn btn-danger"><i class="fa fa-arrow-left">&nbsp;<spring:message code="common.annuler"></spring:message></i></a>
@@ -91,7 +94,18 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
+                        
                             <div class="table-responsive">
+                            	<div class="form-row">
+                        			<div class="col-md-4 mb-3">
+                             			<label><spring:message code="common.article"></spring:message></label>
+                        				<input class="form-control" type="text" id="codeArticle_search" placeholder="Saisir un code article">
+                       		  		</div>
+                       		  		<div class="col-md-4 mb-3">
+                             			<label><spring:message code="common.commande.client.not.found"></spring:message></label>
+                        			</div>
+                        		</div>
+                             <br/><br/><br/><br/>
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
@@ -102,7 +116,7 @@
                                         </tr>
                                     </thead>
                                     <tbody id="detailNouvelleCommande">
-                                                                
+                                           <tr></tr>                     
                                     </tbody>
                                 </table>
                             </div>
@@ -134,7 +148,8 @@
 	<!-- SB Admin Scripts - Include with every page -->
 	<script src="<%=request.getContextPath()%>/resources/js/sb-admin.js"></script>
 
-	<!-- Page-Level Demo Scripts - Blank - Use for reference -->
+	<!-- Script de calcul automatique du prixUnitaireTTC -->
+	<script src="<%=request.getContextPath()%>/resources/js/commandeClient.js"></script>
 
 </body>
 
