@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity 
 @Table(name="categorie")
 public class Categorie implements Serializable {
@@ -60,6 +62,7 @@ public class Categorie implements Serializable {
 		this.designation = designation;
 	}
 
+	@JsonIgnore
 	public List<Article> getArticles() {
 		return articles;
 	}

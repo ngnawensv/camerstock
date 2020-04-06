@@ -11,52 +11,57 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
+import cm.belrose.camerstock.entities.Client;
 import cm.belrose.camerstock.entities.CommandeClient;
 import cm.belrose.camerstock.entities.LigneCommandeClient;
 import cm.belrose.camerstock.services.IArticleService;
 import cm.belrose.camerstock.services.IClientService;
 import cm.belrose.camerstock.services.ICommandeClientService;
 import cm.belrose.camerstock.services.ILigneCommandeClientService;
+
 @Controller
 @RequestMapping(value = "/commandeclient")
 public class CommandeClientController {
 
 	@Autowired
 	private ICommandeClientService commandeClientService;
-	
+
 	@Autowired
 	private ILigneCommandeClientService ligneCommandeClientService;
-	
+
 	@Autowired
 	private IClientService clientService;
-	
-	
+
 	@Autowired
 	private IArticleService articleService;
 
 	@RequestMapping(value = "/")
 	public String index(Model model) {
-		
-		List<CommandeClient> commandesClient= commandeClientService.findByAll();
-		if(commandesClient.isEmpty()) {
-			commandesClient=new ArrayList<CommandeClient>();
-		}else {
+
+		List<CommandeClient> commandesClient = commandeClientService.findByAll();
+		if (commandesClient.isEmpty()) {
+			commandesClient = new ArrayList<CommandeClient>();
+		} else {
 			for (CommandeClient commandeClient : commandesClient) {
-				List<LigneCommandeClient> ligneCommandeClients=ligneCommandeClientService.findByIdCommande(commandeClient.getIdCommandeClient());
+				List<LigneCommandeClient> ligneCommandeClients = ligneCommandeClientService
+						.findByIdCommande(commandeClient.getIdCommandeClient());
+
 				commandeClient.setLigneCommandeClients(ligneCommandeClients);
 			}
 		}
 		model.addAttribute("commandesClient", commandesClient);
 		return "commandeclient/commandeclient";
 	}
-//
-//	// fait appel au formulaire d'ajout d'un commandeClient
-//	@RequestMapping(value = "/nouveau", method = RequestMethod.GET)
-//	public String ajouterCommandeClient(Model model) {
-//		CommandeClient commandeClient = new CommandeClient();
-//		model.addAttribute("commandeClient", commandeClient);
-//		return "commandeClient/ajouterCommandeClient";
-//	}
+
+	@RequestMapping(value = "/nouveau", method = RequestMethod.GET)
+	public String nouvelleCommande(Model model) {
+		List<Client> clients=clientService.findByAll();
+		if(clients.isEmpty()) {
+			clients=new ArrayList<Client>();
+		}
+		model.addAttribute("clients", clients);
+		return "commandeclient/nouvellecommande";
+	}
 //
 //	@RequestMapping(value = "/enregistrer", method = RequestMethod.POST)
 //	public String enregisterCommandeClient(Model model, CommandeClient commandeClient, MultipartFile file) {
@@ -99,8 +104,5 @@ public class CommandeClientController {
 //		return "redirect:/commandeClient/";
 //		
 //	}
-	
-	
-	
-	
+
 }

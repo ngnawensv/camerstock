@@ -84,8 +84,8 @@
                                            		<td>${commande.getClient().getNom() }</td>
                                            		<td>${commande.getTotalCommande() }</td>
                                            		<td>
-                                            <c:url value="/commandeclient/details/${commande.getIdCommandeClient()}" var="urlDetails"/>
-                                            <a href="${urlDetails}"><i class="fa fa-th-list"></i></a>
+                                            <textArea id="json${commande.getIdCommandeClient()}" style="display:none;">${commande.getLigneCommandeJson()}</textArea>
+                                            <button class="btn btn-link" onclick="udapteDetailCommande(${commande.getIdCommandeClient()});"><i class="fa fa-th-list"></i></button>
                                             &nbsp;|&nbsp;
                                             <c:url value="/commandeclient/modifier/${commande.getIdCommandeClient()}" var="urlModifier"/>
                                             <a href="${urlModifier}"><i class="fa fa-edit"></i></a>
@@ -143,11 +143,10 @@
                                             <th><spring:message code="common.quantite"></spring:message></th>
                                             <th><spring:message code="common.prixUnitaireTTC"></spring:message></th>
                                             <th><spring:message code="common.total"></spring:message></th>
-                                            <th><spring:message code="common.actions"></spring:message></th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                                                        
+                                    <tbody id="detailCommande">
+                                                                
                                     </tbody>
                                 </table>
                             </div>
@@ -179,7 +178,8 @@
 	<!-- SB Admin Scripts - Include with every page -->
 	<script src="<%=request.getContextPath()%>/resources/js/sb-admin.js"></script>
 
-	<!-- Page-Level Demo Scripts - Blank - Use for reference -->
+	<!-- Script de calcul automatique du prixUnitaireTTC -->
+	<script src="<%=request.getContextPath()%>/resources/js/commandeClient.js"></script>
 
 </body>
 

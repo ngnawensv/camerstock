@@ -53,6 +53,7 @@ public class LigneCommandeClient implements Serializable {
 		this.idLigneCommandeClient = id;
 	}
 
+
 	public Article getArticle() {
 		return article;
 	}
@@ -61,6 +62,7 @@ public class LigneCommandeClient implements Serializable {
 		this.article = article;
 	}
 	
+	@JsonIgnore
 	public CommandeClient getCommandeClient() {
 		return commandeClient;
 	}
