@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Gestion des stocks</title>
+    <title><spring:message code="common.app.titre"/></title>
 
     <!-- Core CSS - Include with every page -->
     <link href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +25,7 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign In</h3>
+                        <h3 class="panel-title">Veuillez vous connecter</h3>
                     </div>
                     <div class="panel-body">
                         <form role="form" action="j_spring_security_check" method="post">

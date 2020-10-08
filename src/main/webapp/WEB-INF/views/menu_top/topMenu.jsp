@@ -4,15 +4,15 @@
 		<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
 		<span class="icon-bar"></span> <span class="icon-bar"></span>
 	</button>
-	<a class="navbar-brand" href="javascript.void(0);">Gestion des stocks</a>
+	<a class="navbar-brand" href="javascript.void(0);"><spring:message code="common.app.titre"/></a>
 </div>
 <!-- /.navbar-header -->
 <ul class="nav navbar-top-links navbar-right">
-	<li class="dropdown"><a class="dropdown-toggle"
+	<!--<li class="dropdown"><a class="dropdown-toggle"
 		data-toggle="dropdown" href="#"> <i class="fa fa-envelope fa-fw"></i>
 			<i class="fa fa-caret-down"></i>
 	</a>
-		<ul class="dropdown-menu dropdown-messages">
+		 <ul class="dropdown-menu dropdown-messages">
 			<li><a href="#">
 					<div>
 						<strong>John Smith</strong> <span class="pull-right text-muted">
@@ -46,9 +46,9 @@
 			<li><a class="text-center" href="#"> <strong>Read
 						All Messages</strong> <i class="fa fa-angle-right"></i>
 			</a></li>
-		</ul> <!-- /.dropdown-messages --></li>
+		</ul> /.dropdown-messages</li> -->
 	<!-- /.dropdown -->
-	<li class="dropdown"><a class="dropdown-toggle"
+	<!-- <li class="dropdown"><a class="dropdown-toggle"
 		data-toggle="dropdown" href="#"> <i class="fa fa-tasks fa-fw"></i>
 			<i class="fa fa-caret-down"></i>
 	</a>
@@ -120,9 +120,11 @@
 			<li><a class="text-center" href="#"> <strong>See
 						All Tasks</strong> <i class="fa fa-angle-right"></i>
 			</a></li>
-		</ul> <!-- /.dropdown-tasks --></li>
+		</ul> 
+		/.dropdown-tasks
+		</li> -->
 	<!-- /.dropdown -->
-	<li class="dropdown"><a class="dropdown-toggle"
+	<!-- <li class="dropdown"><a class="dropdown-toggle"
 		data-toggle="dropdown" href="#"> <i class="fa fa-bell fa-fw"></i>
 			<i class="fa fa-caret-down"></i>
 	</a>
@@ -165,16 +167,14 @@
 			<li><a class="text-center" href="#"> <strong>See
 						All Alerts</strong> <i class="fa fa-angle-right"></i>
 			</a></li>
-		</ul> <!-- /.dropdown-alerts --></li>
+		</ul> /.dropdown-alerts</li> -->
 	<!-- /.dropdown -->
 	<li class="dropdown"><a class="dropdown-toggle"
 		data-toggle="dropdown" href="#"> <i class="fa fa-user fa-fw"></i>
 			<i class="fa fa-caret-down"></i>
 	</a>
 		<ul class="dropdown-menu dropdown-user">
-			<li><a href="#"><i class="fa fa-user fa-fw"></i> User
-					Profile</a></li>
-			<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
+			<li><a href="#"><i class="fa fa-user fa-fw"></i><spring:message code="common.app.profil"/></a></li>
 			<li class="divider"></li>	
 			<c:url value="/changelocale/fr" var="frUrl"/>
 			<c:url value="/changelocale/en" var="enUrl"/>
@@ -182,7 +182,9 @@
 			<li><a href="${enUrl }"><i class="fa fa-globe fa-fw"></i> <spring:message code="common.locale.en" /></a></li>
 			<li class="divider"></li>
 			<c:url value="/j_spring_security_logout" var="logout"/>
-			<li><a href="${logout }"><i class="fa fa-sign-out fa-fw"></i>Logout</a></li>
+			<li><a href="${logout }"><i class="fa fa-sign-out fa-fw"></i><spring:message code="common.app.deconnexion"/></a></li>
+			<li class="divider"></li>				
+			<li><a href="#"><i class="fa fa-gear fa-fw"></i> <spring:message code="common.app.parametres"/></a></li>
 		</ul> <!-- /.dropdown-user --></li>
 	<!-- /.dropdown -->
 </ul>
