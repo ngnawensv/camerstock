@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Table(name="utilisateur")
 public class Utilisateur implements Serializable {
 	/**
-	 * @author Ngnawen
+	 * @author Ngnawen Samuel
 	 */
 	private static final long serialVersionUID = 1L;
 	
@@ -104,6 +104,12 @@ public class Utilisateur implements Serializable {
 
 	public void setActived(boolean actived) {
 		this.actived = actived;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
 	}
 	
 	
