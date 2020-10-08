@@ -36,4 +36,10 @@ public class LoginController {
 		return "login/login";
 	}
 	
+	@RequestMapping(value="/failedlogin")
+	public String failedlogin() {
+		
+		return "login/login";
+	}
+	
 }

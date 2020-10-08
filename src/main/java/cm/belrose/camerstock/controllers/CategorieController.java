@@ -1,7 +1,5 @@
 package cm.belrose.camerstock.controllers;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,11 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.multipart.MultipartFile;
 
 import cm.belrose.camerstock.entities.Categorie;
 import cm.belrose.camerstock.services.ICategorieService;
-import cm.belrose.camerstock.services.IFlickrService;
 
 @Controller
 @RequestMapping(value = "/categorie")
@@ -23,9 +19,6 @@ public class CategorieController {
 
 	@Autowired
 	private ICategorieService categorieService;
-
-	@Autowired
-	private IFlickrService flickrService;
 
 	@RequestMapping(value = "/")
 	public String categorie(Model model) {

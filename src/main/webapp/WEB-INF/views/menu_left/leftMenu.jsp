@@ -12,37 +12,37 @@
 				</div> <!-- /input-group -->
 			</li>
 			<c:url value="/home/" var="home"/>
-			<li><a href="${home }"><i class="fa fa-dashboard fa-fw"></i><fmt:message key="common.dashbord"/></a></li>
+			<li><a href="${home }"><i class="fa fa-dashboard fa-fw"></i><spring:message code="common.dashbord" /></a></li>
 			<c:url value="/article/" var="article"/>
-			<li><a href="${article }"><i class="fa fa-barcode"></i>&nbsp;<fmt:message key="common.article"/></a></li>
-			<li><a href="#"><i class="fa fa-group"></i></i>&nbsp;<fmt:message key="common.client"/><span class="fa arrow"></span></a>
+			<li><a href="${article }"><i class="fa fa-barcode"></i>&nbsp;<spring:message code="common.article" /></a></li>
+			<li><a href="#"><i class="fa fa-group"></i></i>&nbsp;<spring:message code="common.client" /><span class="fa arrow"></span></a>
 				<ul class="nav nav-second-level">
 					<c:url value="/client/" var="client"/>
-					<li><a href="${client }"><fmt:message key="common.client"/></a></li>
+					<li><a href="${client }"><spring:message code="common.client" /></a></li>
 					<c:url value="/commandeClient/" var="commandeClient"/>
-					<li><a href="${commandeClient }"><fmt:message key="common.client.commande"/></a></li>
+					<li><a href="${commandeClient }"><spring:message code="common.client.commande" /></a></li>
 				</ul> <!-- /.nav-second-level --></li>
 			<li><a href="#"><i class="fa fa-group"></i>&nbsp;
-					<fmt:message key="common.fournisseur"/><span class="fa arrow"></span></a>
+					<spring:message code="common.fournisseur" /><span class="fa arrow"></span></a>
 				<ul class="nav nav-second-level">
 					<c:url value="/fournisseur/" var="fournisseur"/>
-					<li><a href="${fournisseur }"><fmt:message key="common.fournisseur"/></a></li>
+					<li><a href="${fournisseur }"><spring:message code="common.fournisseur" /></a></li>
 					<c:url value="/commandeFournisseur/" var="commandeFournisseur"/>
-					<li><a href="${commandeFournisseur }"><fmt:message key="common.fournisseur.commande"/></a></li>
+					<li><a href="${commandeFournisseur }"><spring:message code="common.fournisseur.commande" /></a></li>
 				</ul> <!-- /.nav-second-level --></li>
 				<c:url value="/stock/" var="stock"/>
 			<li><a href="${stock }"><i class="fa fa-database"></i>				
-					<fmt:message key="common.stock"/></a></li>
+					<spring:message code="common.stock" /></a></li>
 			<c:url value="/vente/" var="vente"/>
 			<li><a href="${vente }"><i class="fa fa-edit fa-fw"></i>
-					<fmt:message key="common.vente"/></a></li>
+					<spring:message code="common.vente" /></a></li>
 			<li><a href="#"><i class="fa fa-wrench fa-fw"></i>
-					<fmt:message key="common.parametrage"/><span class="fa arrow"></span></a>
+					<spring:message code="common.parametrage" /><span class="fa arrow"></span></a>
 				<ul class="nav nav-second-level">
 					<c:url value="/utilisateur/" var="utilisateur"/>
-					<li><a href="${utilisateur }"><fmt:message key="common.parametrage.utilisateur"/></a></li>
+					<li><a href="${utilisateur }"><spring:message code="common.parametrage.utilisateur" /></a></li>
 					<c:url value="/categorie/" var="categorie"/>
-					<li><a href="${categorie }"><fmt:message key="common.parametrage.categorie"/></a></li>
+					<li><a href="${categorie }"><spring:message code="common.parametrage.categorie"/></a></li>
 				</ul> 
 				<!-- /.nav-second-level -->
 				</li>

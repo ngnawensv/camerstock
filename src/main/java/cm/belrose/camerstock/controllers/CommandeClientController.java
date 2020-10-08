@@ -1,7 +1,5 @@
 package cm.belrose.camerstock.controllers;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,17 +13,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 import cm.belrose.camerstock.entities.CommandeClient;
 import cm.belrose.camerstock.services.ICommandeClientService;
-import cm.belrose.camerstock.services.IFlickrService;
-
 @Controller
 @RequestMapping(value = "/commandeClient")
 public class CommandeClientController {
 
 	@Autowired
 	private ICommandeClientService commandeClientService;
-
-	@Autowired
-	private IFlickrService flickrService;
 
 	@RequestMapping(value = "/")
 	public String commandeClient(Model model) {
@@ -50,25 +43,7 @@ public class CommandeClientController {
 
 	@RequestMapping(value = "/enregistrer", method = RequestMethod.POST)
 	public String enregisterCommandeClient(Model model, CommandeClient commandeClient, MultipartFile file) {
-		String photoUrl = null;
 		if (commandeClient != null) {
-			if ((file != null) && (!file.isEmpty())) {
-				InputStream stream = null;
-				try {
-					stream = file.getInputStream();
-					//photoUrl = flickrService.savePhoto(stream, commandeClient.getNom());
-					//commandeClient.setPhoto(photoUrl);
-				} catch (Exception e) {
-					e.printStackTrace();
-				} finally {
-					try {
-						stream.close();
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-
-				}
-			}
 			if(commandeClient.getIdCommandeClient()!=null) {
 				commandeClientService.update(commandeClient);
 			}else {

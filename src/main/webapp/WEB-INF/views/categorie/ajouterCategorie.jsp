@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Start Bootstrap - SB Admin Version 2.0 Demo</title>
+<title>Gestion des stocks</title>
 
 <!-- Core CSS - Include with every page -->
 <link
@@ -41,7 +41,7 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header"><fmt:message key="common.categorie.nouveau"></fmt:message></h1>
+					<h1 class="page-header"><spring:message code="common.categorie.nouveau"></spring:message></h1>
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>
@@ -50,7 +50,7 @@
 				<div class="col-lg-12">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
-							<fmt:message key="common.categorie.nouveau"></fmt:message>
+							<spring:message code="common.categorie.nouveau"></spring:message>
 						</div>
 						<!-- /.panel-heading -->
 						<div class="panel-body">
@@ -58,16 +58,16 @@
 							<f:form modelAttribute="categorie" action='${urlEnregistrer}' role="form">
 								<f:hidden path="idCategorie"/>
 								<div class="form-group">
-									<label><fmt:message key="common.code"></fmt:message></label> 
+									<label><spring:message code="common.code"></spring:message></label> 
 									<f:input path="code" class="form-control" placeholder="Code"/>
 								</div>
 								<div class="form-group">
-									<label><fmt:message key="common.designation"></fmt:message></label> 
+									<label><spring:message code="common.designation"></spring:message></label> 
 									<f:input path="designation" class="form-control" placeholder="Désignation"/>
 								</div>								
 								<div class="panel-footer">
-								<button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;<fmt:message key="common.enregistrer"></fmt:message></i></button>
-								<a href="<c:url value="/categorie/"/>" class="btn btn-danger"><i class="fa fa-arrow-left">&nbsp;<fmt:message key="common.annuler"></fmt:message></i></a>
+								<button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;<spring:message code="common.enregistrer"></spring:message></i></button>
+								<a href="<c:url value="/categorie/"/>" class="btn btn-danger"><i class="fa fa-arrow-left">&nbsp;<spring:message code="common.annuler"></spring:message></i></a>
 								</div>
 							</f:form>
 						</div>
